@@ -29,9 +29,14 @@ public class Sample21Controller {
 
   @GetMapping("/sample23")
   public String sample23(@RequestParam Integer tasu1, @RequestParam Integer tasu2, ModelMap model) {
-  int tasuResult = tasu1 + tasu2;
-  model.addAttribute("tasuResult2", tasuResult);
+    int tasuResult = tasu1 + tasu2;
+    model.addAttribute("tasuResult2", tasuResult);
 
-  return "sample21.html";
+    return "sample21.html";
+  }
+
+  @GetMapping("/sample24")
+  public String sample24() {
+    return "sample24.html";
   }
 }
