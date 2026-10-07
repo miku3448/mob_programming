@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 //import org.springframework.web.bind.annotation.PostMapping;
 //import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class Sample21Controller {
@@ -24,5 +25,13 @@ public class Sample21Controller {
     // Thymeleafに値を渡す
     model.addAttribute("tasuResult1", tasuResult);
     return "sample21.html";
+  }
+
+  @GetMapping("/sample23")
+  public String sample23(@RequestParam Integer tasu1, @RequestParam Integer tasu2, ModelMap model) {
+  int tasuResult = tasu1 + tasu2;
+  model.addAttribute("tasuResult2", tasuResult);
+
+  return "sample21.html";
   }
 }
