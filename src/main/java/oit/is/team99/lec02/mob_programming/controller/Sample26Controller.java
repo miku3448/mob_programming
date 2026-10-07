@@ -11,29 +11,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 //import oit.is.inudaisuki.springboot_samples.model.Score;
 
-/**
- * @RequestMapping("/sample26")をクラスの前につけると，このクラスのすべてのメソッドは/sample26で呼び出されることを表す
- */
 @Controller
 @RequestMapping("/sample26")
 public class Sample26Controller {
 
-  /**
-   * @GetMappingに引数が与えられていないので，クラスで指定されたとおり/sample26へのGETリクエストがあったら，sample26()を呼び出して，sample26.htmlを返す
-   *
-   * @return
-   */
   @GetMapping
   public String sample26() {
     return "sample26.html";
   }
 
-  /**
-   * メソッド名は異なるが，/sample26というPOSTリクエストがあったら，こちらが呼び出されて，sample26.htmlが返る．一つのリクエストに対してPOST，GET両方を使い分けることができる
-   * ArrayListオブジェクトをModelMapの変数に直接与えて，thymeleafにわたすことができる
-   *
-   * @return
-   */
   @PostMapping
   public String sample27(@RequestParam Integer min, @RequestParam Integer max, ModelMap model) {
     int sum = 0;
@@ -49,11 +35,7 @@ public class Sample26Controller {
     return "sample26.html";
   }
 
-  /**
-   * /sample26/ave にPOSTでアクセスされるとこのメソッドが呼び出される
-   *
-   * @return
-   */
+  // sample26/ave
   @PostMapping("ave")
   public String sample28(@RequestParam Double num1, @RequestParam Double num2, @RequestParam Double num3,
       ModelMap model) {
@@ -61,8 +43,8 @@ public class Sample26Controller {
     numList.add(num1);
     numList.add(num2);
     numList.add(num3);
-    //Score score = new Score(numList);
-    //model.addAttribute("score", score);
+    // Score score = new Score(numList);
+    // model.addAttribute("score", score);
     return "sample26.html";
   }
 }

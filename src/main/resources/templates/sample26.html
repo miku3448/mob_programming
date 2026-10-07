@@ -7,7 +7,7 @@
 </head>
 
 <body>
-  <script th:inline="javascript" th:if=$"{score}">
+  <script th:inline="javascript" th:if="${score}">
     window.onload = function () {
       //score変数の内容を読み取る
       var score = /*[[${ score }]]*/ {};
@@ -18,7 +18,7 @@
         num_list_txt = num_list_txt + score.numList[i] + ",";
       }
       num_list_txt = num_list_txt + "<br>平均は" + score.ave;
-      
+
       //DOM操作
       document.getElementById("num_list").innerHTML = num_list_txt;
       console.log(score);//ログ出力．ブラウザのコンソール画面に表示される
